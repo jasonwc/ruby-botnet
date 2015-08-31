@@ -1,0 +1,4 @@
+login_user
+go_to_posts_index
+create_post
+create_comment
