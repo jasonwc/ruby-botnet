@@ -1,7 +1,7 @@
 # Libraries/Gems
 require 'mechanize'
 # Command Modules for Bot class
-require './../commands/target_app.rb'
+require './commands/target_app.rb'
 
 class Bot
   include TargetApp

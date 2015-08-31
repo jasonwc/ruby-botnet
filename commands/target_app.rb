@@ -1,7 +1,13 @@
 module TargetApp
-  URL = 'http://localhost:3000'
+  URL = 'http://botnet-target.herokuapp.com'
   EMAIL = 'json@masteryconnect.com'
   PASSWORD = 'helloworld'
+
+  def go_to_homepage(agent, state)
+    home_page = agent.get(URL)
+
+    state[:go_to_homepage] = {status: agent.page.code}
+  end
 
   def login(agent, state)
     # Use the Mechanize agent to login to the website
