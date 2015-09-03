@@ -6,14 +6,13 @@ class Supervisor
   attr_accessor :bots
 
   # Opens a connection with the server and sets up bots and a responses queue
-  def initialize(host, port, threads, timeout)
+  def initialize(host, port, threads)
     begin
       @id = "Supervisor-" + SecureRandom.uuid
       @socket = TCPSocket.new(host, port)
       @responses = Queue.new
       @retry_count = 0
       @threads = threads
-      @timeout = timeout
       @bots = initialize_bots
     rescue Exception => e
       puts "Issue connecting to server, retrying in 5 seconds"

@@ -16,12 +16,8 @@ OptionParser.new do |opts|
   opts.on('-tTHREADS', '--threadsTHREADS') do |str|
     @options[:threads] = [str.to_i, 1].max
   end
-
-  opts.on('-oTIMEOUT', '--timeoutTIMEOUT') do |str|
-    @options[:timeout] = [str.to_f, 300].min
-  end
 end.parse!
 
 # Creates the supervisor
 Thread.abort_on_exception = false
-Supervisor.new(@options[:host], @options[:port], @options[:threads], @options[:timeout])
+Supervisor.new(@options[:host], @options[:port], @options[:threads])

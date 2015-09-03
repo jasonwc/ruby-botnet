@@ -1,4 +1,7 @@
 module TargetApp
+  # Replace these with your own login details, variables, etc...
+  # Note, this is currently using Mechanize but there's nothing stopping you from using something else.
+  # Just be sure to include whatever Gem you go with.
   URL = 'http://botnet-target.herokuapp.com'
   EMAIL = 'somedouche@isuck.com'
   PASSWORD = 'helloworld'
@@ -16,6 +19,13 @@ module TargetApp
     state[:go_to_homepage] = {status: agent.page.code}
   end
 
+  def go_to_about(agent, state)
+    # Use the Mechanize agent to go to the static_pages#about
+    about_page = agent.get('/about')
+
+    state[:go_to_about] = {status: agent.page.code}
+  end
+
   def go_to_posts_index(agent, state)
     # Use the Mechanize agent to go to the posts#index
     posts_index = agent.get("/posts")
@@ -23,18 +33,11 @@ module TargetApp
     state[:go_to_posts_index] = {status: agent.page.code}
   end
 
-  def go_to_post_one(agent, state)
+  def go_to_post_two(agent, state)
     # Use the Mechanize agent to go to the posts#show
-    post_one = agent.get("/posts/1")
+    post_one = agent.get("/posts/2")
 
     state[:go_to_posts_one] = {status: agent.page.code}
-  end
-
-  def go_to_about(agent, state)
-    # Use the Mechanize agent to go to the static_pages#about
-    about_page = agent.get('/about')
-
-    state[:go_to_about] = {status: agent.page.code}
   end
 
   def create_post(agent, state)

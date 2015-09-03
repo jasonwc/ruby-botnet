@@ -1,2 +1,0 @@
-go_to_homepage
-go_to_homepage

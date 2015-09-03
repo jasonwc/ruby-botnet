@@ -1,9 +1,11 @@
 # Libraries/Gems
+# If you wish to go with something besides mechanize, just add a different gem
 require 'mechanize'
 # Command Modules for Bot class
 require './commands/target_app.rb'
 
 class Bot
+  # This is the command module that is included. Write your own with the specific user actions you wish to simulate and include it here.
   include TargetApp
   attr_accessor :queue, :thread
 
