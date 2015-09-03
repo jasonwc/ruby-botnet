@@ -1,6 +1,6 @@
 module TargetApp
   URL = 'http://botnet-target.herokuapp.com'
-  EMAIL = 'json@masteryconnect.com'
+  EMAIL = 'somedouche@isuck.com'
   PASSWORD = 'helloworld'
 
   def go_to_homepage(agent, state)
