@@ -34,4 +34,4 @@ Routines simply specify methods to be called by the bots in sequential order. Th
 
 The command module that comes with the ruby-botnet is designed to test a target app. This is a simple Rails project with Devise, Posts, and Comments.
 
-`www.github.com/jasonwc/target_app
+`www.github.com/jasonwc/target_app`
