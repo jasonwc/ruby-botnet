@@ -15,11 +15,13 @@ To run the botnet locally on your computer, use the following:
 
 Server:
 
-`ruby server.rb --host localhost --port 4567 --threads 10 --percentage 0.9 --routine ./routines/target_app/sample_routine.txt`
+`ruby start_server.rb --host localhost --port 4567 --threads 10 --percentage 0.9 --routine ./routines/target_app/sample_routine.txt`
 
-Client: 
+Client:
 
-`ruby client.rb --host localhost --port 4567 --threads 10`
+`ruby start_client.rb --host localhost --port 4567 --threads 10`
+
+You must run at least one client and one server.
 
 # ARHITECTURE #
 
